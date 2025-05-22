@@ -150,10 +150,10 @@ router.post(
 router.get("/me", authenticateToken, async (req: Request, res: Response) => {
   try {
     // Assuming req.user is populated by authenticateToken middleware
-    if (!req.user) {
+    if (!req?.user) {
       return res.status(401).json({ message: "User not authenticated" });
     }
-    res.json(req.user);
+    res.json(req?.user);
   } catch (error) {
     console.error("Error fetching user data:", error);
     res.status(500).json({ message: "Internal server error" });
