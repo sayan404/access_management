@@ -1,0 +1,208 @@
+.pending-requests-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.pending-requests-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.pending-requests-header h2 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.refresh-button {
+  padding: 0.5rem 1rem;
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  color: #4a5568;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.requests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.request-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.request-card:hover {
+  transform: translateY(-2px);
+}
+
+.request-header {
+  padding: 1rem;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.request-id {
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.request-date {
+  color: #718096;
+  font-size: 0.875rem;
+}
+
+.request-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.user-info,
+.software-info,
+.access-info,
+.reason-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.label {
+  color: #718096;
+  font-size: 0.875rem;
+}
+
+.value {
+  color: #2d3748;
+  font-weight: 500;
+}
+
+.access-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: #ebf8ff;
+  color: #2b6cb0;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  align-self: flex-start;
+}
+
+.reason-text {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #4a5568;
+  margin: 0;
+}
+
+.request-actions {
+  padding: 1rem;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  gap: 1rem;
+}
+
+.approve-btn,
+.reject-btn {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.approve-btn {
+  background: #48bb78;
+  color: white;
+}
+
+.approve-btn:hover:not(:disabled) {
+  background: #38a169;
+}
+
+.reject-btn {
+  background: #f56565;
+  color: white;
+}
+
+.reject-btn:hover:not(:disabled) {
+  background: #e53e3e;
+}
+
+.approve-btn:disabled,
+.reject-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.message {
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.message.success {
+  background: #c6f6d5;
+  color: #2f855a;
+}
+
+.message.error {
+  background: #fed7d7;
+  color: #c53030;
+}
+
+.loading-spinner {
+  text-align: center;
+  padding: 2px;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.no-requests {
+  text-align: center;
+  padding: 3rem;
+  background: white;
+  border-radius: 12px;
+  color: #718096;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .requests-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pending-requests-container {
+    margin: 1rem;
+  }
+  
+  .request-actions {
+    flex-direction: column;
+  }
+} 
