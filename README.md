@@ -37,6 +37,8 @@ The project consists of two main parts:
    yarn
    ```
 
+> **Note:** For testing purposes, I've included my database credentials in the .env.local file.
+
 3. Create a `.env` file based on the example:
 
    ```bash
